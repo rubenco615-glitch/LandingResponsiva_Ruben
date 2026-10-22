@@ -1,14 +1,14 @@
-// Variables para el modo oscuro
-$dark-bg: #1E1F20;
-$dark-nav: #0F0F0F;
-$dark-card: #2B2C2E;
-$dark-border: #cacaca;
-$dark-text: #E0E0E0;
-$dark-red: #FF4D4D;
-$dark-hover: #DC3445;
-$white: #FFFFFF;
+// Variables de colores que usaremos solo cuando esté activado el modo oscuro
+$dark-bg: #1E1F20;      // Fondo gris oscuro principal
+$dark-nav: #0F0F0F;     // Fondo casi negro para el navbar y footer
+$dark-card: #2B2C2E;    // Fondo para las tarjetas
+$dark-border: #cacaca;  // Borde clarito para que resalten las tarjetas sobre fondo oscuro
+$dark-text: #E0E0E0;    // Color de texto claro para que se lea bien
+$dark-red: #FF4D4D;     // Rojo más brillante para que destaque en la oscuridad
+$dark-hover: #DC3445;   // Color al pasar el ratón por los enlaces
+$white: #FFFFFF;        // Blanco puro
 
-// Estilos generales del modo oscuro
+// Cambiamos el fondo de toda la página y el mosaico oscuro
 body {
     background-color: $dark-bg !important;
     color: $dark-text;
@@ -16,35 +16,41 @@ body {
     background-repeat: repeat;
 }
 
+// Fondo oscuro para la barra de arriba y el pie de página
 nav,
 footer {
     background-color: $dark-nav !important;
 }
 
+// El footer con texto claro y una línea finita arriba para separarlo
 footer {
     color: $dark-text;
     border-top: 1px solid $dark-card;
 }
 
+// Títulos de las secciones en blanco para que resalten
 .titulo-seccion {
     color: $white !important;
 }
 
-// Tarjetas en modo oscuro
+// Estilos de las tarjetas en modo oscuro
 .card {
     background-color: $dark-card;
     border: 2px solid $dark-border;
     color: $dark-text;
 
+    // Texto secundario dentro de las tarjetas
     p {
         color: $dark-border;
     }
 
+    // Título de la tarjeta con el rojo brillante
     h3 {
         color: $dark-red;
     }
 }
 
+// Ocultamos el logo blanco y mostramos el logo rojo preparado para modo oscuro
 .img-light {
     display: none;
 }
@@ -53,29 +59,34 @@ footer {
     display: block !important;
 }
 
+// Borde claro en las tarjetas del estadio
 .border-estadio {
     border-color: $dark-border !important;
 }
 
+// Color rojizo cuando pasamos el ratón por los enlaces del menú
 .nav-link {
     &:hover {
         color: $dark-hover;
     }
 }
 
+// Título de las tarjetas del estadio en blanco
 .card-title-stadium {
     color: $white !important;
 }
 
-// Plantilla en modo oscuro
+// Borde de las tarjetas de los jugadores
 .card-jugador {
     border-color: $dark-border;
 }
 
+// Dorsal del jugador en rojo brillante
 .jugador-dorsal {
     color: $dark-red;
 }
 
+// Nombre del jugador en blanco
 .jugador-nombre {
     color: $white;
 }
