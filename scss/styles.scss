@@ -1,19 +1,18 @@
-// Importamos las librerías que trae Sass para trabajar con colores y matemáticas
 @use "sass:color";
 @use "sass:math";
 
-// Variables básicas para reutilizar medidas y bordes redondeados
+// Variables
 $espaciado-base: 8px;
 $radio-base: 8px;
 
-// Mixin para centrar cosas rápido con flexbox sin tener que escribir siempre las 3 líneas
+// Mixin reutilizable
 @mixin centrar-flex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// Mixin para darle estilo a los botones pasándole el color de fondo y el color del texto
+// Mixin para botones
 @mixin estilo-boton($fondo, $texto: white) {
   background-color: $fondo;
   color: $texto;
@@ -22,27 +21,24 @@ $radio-base: 8px;
   cursor: pointer;
 }
 
-// Función que multiplica el espaciado base según el número que le pasemos (ej: 8px * 2)
+// Función propia para espaciados
 @function espacio($factor) {
   @return $espaciado-base * $factor;
 }
 
-// Variables con los colores corporativos del Sevilla, fuentes y animaciones
+// Variables corporativas
 $font-corporate: "MontecatiniPro", sans-serif;
-
 $color-primary: #D10000;
 $color-white: #FFFFFF;
 $color-black: #000000;
 
-// Variables para las transiciones suaves al pasar el ratón por encima
 $transition-card: transform 0.25s ease, box-shadow 0.25s ease;
 $transition-hover: transform 0.25s ease;
 
-// Puntos de corte para las pantallas (móviles y tablets)
 $bp-lg: 991.98px;
 $bp-md: 768px;
 
-// Cargamos la fuente personalizada de los títulos desde la carpeta fonts
+// Tipografía
 @font-face {
     font-family: "MontecatiniPro";
     src: url("../fonts/MontecatiniPro-StrettoBold.woff2") format("woff2");
@@ -50,7 +46,7 @@ $bp-md: 768px;
     font-style: normal;
 }
 
-// El logo y el texto de la barra de navegación superior
+// Navbar y footer
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -59,20 +55,17 @@ $bp-md: 768px;
     font-size: clamp(24px, 5vw, 35px);
     color: $color-white;
 
-    // Cuando pasamos el ratón por encima o hacemos clic que siga en blanco
     &:hover,
     &:focus {
         color: $color-white;
     }
 }
 
-// Ponemos el fondo rojo oficial al menú de arriba y al pie de página
 nav,
 footer {
     background-color: $color-primary;
 }
 
-// Estilos del pie de página de abajo del todo
 footer {
     color: $color-white;
     padding: 10px 0 30px 0;
@@ -83,56 +76,48 @@ footer {
     }
 }
 
-// Enlaces del menú de navegación
 .nav-link {
     font-family: $font-corporate;
     font-size: 25px;
     color: $color-white;
 }
 
-// Título grande de cada sección de la página
 .titulo-seccion {
     font-family: $font-corporate;
     font-size: 35px;
     color: $color-black;
 }
 
-// Tamaño controlado para que el escudo del Sevilla no se desborde
 .logo-svq {
     max-width: 50px;
     max-height: 50px;
 }
 
-// Estilos generales para todas las tarjetas (historia, estadio, trofeos...)
+// Tarjetas
 .card {
     height: 100%;
     text-align: center;
     border: 2px solid $color-black;
     transition: $transition-card;
 
-    // Que la foto de dentro no se deforme
     img {
         object-fit: contain;
     }
 
-    // Título dentro de la tarjeta en rojo
     h3 {
         font-family: $font-corporate;
         color: $color-primary;
     }
 
-    // Quitamos el margen inferior por defecto de los párrafos
     p {
         margin-bottom: 0;
     }
 }
 
-// Por defecto ocultamos la imagen del logo rojo (solo se ve en modo oscuro)
 .img-dark {
     display: none;
 }
 
-// Alinear el icono del botón de cambiar a modo oscuro
 .btn-link {
     img {
         vertical-align: middle;
@@ -140,7 +125,6 @@ footer {
     }
 }
 
-// Borde y color negro específicos para las tarjetas del estadio
 .border-estadio {
     border-color: $color-black !important;
 }
@@ -149,14 +133,13 @@ footer {
     color: $color-black !important;
 }
 
-// Tarjeta especial para cada jugador de la plantilla con proporción 4:5
+// Plantilla
 .card-jugador {
     position: relative;
     overflow: hidden;
     aspect-ratio: 4 / 5;
 }
 
-// Número del dorsal del jugador, colocado arriba a la derecha
 .jugador-dorsal {
     position: absolute;
     top: clamp(6px, 1.5vw, 10px);
@@ -167,12 +150,10 @@ footer {
     color: $color-primary;
 }
 
-// Contenedor que ocupa toda la tarjeta para la foto
 .jugador-img-wrapper {
     height: 100%;
 }
 
-// Foto del jugador con zoom ligero y anclada abajo para que no se corte el cuerpo
 .jugador-img {
     width: 100%;
     height: 100%;
@@ -181,7 +162,6 @@ footer {
     object-position: bottom;
 }
 
-// Caja con el nombre del jugador, colocada arriba a la izquierda
 .jugador-info {
     position: absolute;
     top: clamp(6px, 1.5vw, 10px);
@@ -189,7 +169,6 @@ footer {
     max-width: 65%;
 }
 
-// Texto del nombre del jugador en mayúsculas y adaptable a la pantalla
 .jugador-nombre {
     font-family: $font-corporate;
     font-size: clamp(13px, 2.2vw, 26px);
@@ -200,7 +179,7 @@ footer {
     word-break: break-word;
 }
 
-// Fila de patrocinadores en una sola línea para pantallas de ordenador
+// Patrocinios
 .patrocinios-row {
     display: flex;
     justify-content: center;
@@ -223,7 +202,6 @@ footer {
     }
 }
 
-// Efecto para que los logos y redes sociales crezcan un poco al pasar el ratón (hover)
 .patrocinios-row img,
 footer a img {
     object-fit: contain;
@@ -234,7 +212,6 @@ footer a img {
     }
 }
 
-// Botón de tres rayas del menú en pantallas pequeñas (hamburguesa)
 .navbar-toggler {
     padding: 0.25rem 0.5rem;
     font-size: 1.25rem;
@@ -244,7 +221,7 @@ footer a img {
     }
 }
 
-// Adaptación para tablets y móviles (menos de 992px): espaciamos los enlaces del menú desplegable
+// Responsive
 @media (max-width: $bp-lg) {
     .navbar-collapse {
         padding: 0.75rem 0;
@@ -256,7 +233,6 @@ footer a img {
     }
 }
 
-// Adaptación para móviles (menos de 768px): los patrocinadores se ponen en 2 columnas
 @media (max-width: $bp-md) {
     .patrocinios-row {
         flex-wrap: wrap;
@@ -265,7 +241,6 @@ footer a img {
         gap: 1.5rem 1rem;
         padding: 0.5rem 0;
 
-        // Cada patrocinador ocupa la mitad del ancho (2 por fila)
         a {
             flex: 0 0 calc(50% - 1rem);
             max-width: calc(50% - 1rem);
@@ -280,7 +255,6 @@ footer a img {
         }
     }
 
-    // Tamaño ajustado para el logo de Adidas en el footer de móvil
     footer a img[alt="Adidas Footer"] {
         max-height: 55px !important;
     }
