@@ -1,0 +1,81 @@
+// Variables para el modo oscuro
+$dark-bg: #1E1F20;
+$dark-nav: #0F0F0F;
+$dark-card: #2B2C2E;
+$dark-border: #cacaca;
+$dark-text: #E0E0E0;
+$dark-red: #FF4D4D;
+$dark-hover: #DC3445;
+$white: #FFFFFF;
+
+// Estilos generales del modo oscuro
+body {
+    background-color: $dark-bg !important;
+    color: $dark-text;
+    background-image: url("../img/mosaico-dark.png") !important;
+    background-repeat: repeat;
+}
+
+nav,
+footer {
+    background-color: $dark-nav !important;
+}
+
+footer {
+    color: $dark-text;
+    border-top: 1px solid $dark-card;
+}
+
+.titulo-seccion {
+    color: $white !important;
+}
+
+// Tarjetas en modo oscuro
+.card {
+    background-color: $dark-card;
+    border: 2px solid $dark-border;
+    color: $dark-text;
+
+    p {
+        color: $dark-border;
+    }
+
+    h3 {
+        color: $dark-red;
+    }
+}
+
+.img-light {
+    display: none;
+}
+
+.img-dark {
+    display: block !important;
+}
+
+.border-estadio {
+    border-color: $dark-border !important;
+}
+
+.nav-link {
+    &:hover {
+        color: $dark-hover;
+    }
+}
+
+.card-title-stadium {
+    color: $white !important;
+}
+
+// Plantilla en modo oscuro
+.card-jugador {
+    border-color: $dark-border;
+}
+
+.jugador-dorsal {
+    color: $dark-red;
+}
+
+.jugador-nombre {
+    color: $white;
+}

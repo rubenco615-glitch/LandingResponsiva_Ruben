@@ -1,66 +1,66 @@
 body {
-    background-color: #1E1F20 !important;
-    color: #E0E0E0;
-    background-image: url("../img/mosaico-dark.png") !important;
-    background-repeat: repeat;
+  background-color: #1E1F20 !important;
+  color: #E0E0E0;
+  background-image: url("../img/mosaico-dark.png") !important;
+  background-repeat: repeat;
 }
 
 nav,
 footer {
-    background-color: #0F0F0F !important;
+  background-color: #0F0F0F !important;
 }
 
 footer {
-    color: #E0E0E0;
-    border-top: 1px solid #2B2C2E;
+  color: #E0E0E0;
+  border-top: 1px solid #2B2C2E;
 }
 
 .titulo-seccion {
-    color: #FFFFFF !important;
+  color: #FFFFFF !important;
 }
 
 .card {
-    background-color: #2B2C2E;
-    border: 2px solid #cacaca;
-    color: #E0E0E0;
+  background-color: #2B2C2E;
+  border: 2px solid #cacaca;
+  color: #E0E0E0;
 }
-
 .card p {
-    color: #cacaca;
+  color: #cacaca;
 }
-
 .card h3 {
-    color: #FF4D4D;
+  color: #FF4D4D;
 }
 
 .img-light {
-    display: none;
+  display: none;
 }
 
 .img-dark {
-    display: block !important;
+  display: block !important;
 }
 
 .border-estadio {
-    border-color: #cacaca !important;
+  border-color: #cacaca !important;
 }
 
 .nav-link:hover {
-    color: #DC3445;
+  color: #DC3445;
 }
 
 .card-title-stadium {
-    color: #ffffff !important;
+  color: #FFFFFF !important;
 }
 
 .card-jugador {
-    border-color: #cacaca;
+  border-color: #cacaca;
 }
 
 .jugador-dorsal {
-    color: #FF4D4D;
+  color: #FF4D4D;
 }
 
 .jugador-nombre {
-    color: #FFFFFF;
+  color: #FFFFFF;
 }
+
+/*# sourceMappingURL=dark.css.map */
